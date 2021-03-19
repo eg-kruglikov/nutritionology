@@ -1,0 +1,51 @@
+<div class="addProductButton">
+<a class="btn btn-primary btn-lg btn-block"href="/newProduct" role="button">Добавить новый продукт</a>
+</div>
+
+<h1 style="text-align: center;">Список продуктов</h1>
+{{!-- 
+<main role="main">
+  <ul class="entries">
+    {{#each entries}}
+    <li class="entry">
+      <span class="singer">{{this.singer}}</span>
+      <span class="song-title">{{this.songTitle}}</span>
+      <ul class="entry-links">
+        <li class="entry-link"><a href="show-one-entry/{{this.id}}">details</a></li>
+        <li class="entry-link"><a href="edit-one-entry-form/{{this.id}}">edit</a></li>
+        <li class="entry-link"><a href="delete-entry/{{this.id}}">delete</a></li>
+      </ul>
+    </li>
+    {{/each}}
+  </ul>
+</main> --}}
+
+<div class="addedProductList">
+<table class="table table-hover">
+  <thead>
+    <tr>
+      <th scope="col">Продукт</th>
+      <th scope="col">Калории</th>
+      <th scope="col">Белки</th>
+      <th scope="col">Жиры</th>
+      <th scope="col">Углеводы</th>
+      <th scope="col">Порция</th>
+    </tr>
+  </thead>
+  <tbody>
+   {{#each product}}
+    <tr>
+      <th scope="row">{{this.name}} 
+			<a id="editButton" class="editButton" data-id="{{this._id}}" href="/productEdit/{{this._id}}">edit</a>
+			<a id="deleteButton" data-id="{{this._id}}" href="">delete</a>
+		</th>
+      <td>{{this.calories}}</td>
+      <td>{{this.proteins}}</td>
+      <td>{{this.fats}}</td>
+      <td>{{this.carbohydrates}}</td>
+      <td>{{this.serving}}</td>
+    </tr>
+	  {{/each}}
+  </tbody>
+</table>
+</div>
